@@ -6,11 +6,6 @@
       <!-- LOGIN DIV -->
       <div class="col-sm-12 col-xs-12  forgetPassContainer">
 
-        <!-- Logo -->
-        <div class="logoContainer">
-          <img class="logoIcon" src="/static/img/logo/logo_dark_hr.png" />
-        </div>
-
         <!-- Header -->
         <div v-if="this.$route.query.token" class="forgetPassHeader">Create New Password</div>
         <div v-else class="forgetPassHeader">Send Password Reset Link</div>
@@ -38,9 +33,6 @@
 
         <!-- Company & Email Form -->
         <b-form v-else class="forgetPassForm" @submit="onEmailSubmit">
-          <b-form-group id="companyCodeInputGroup" label="Company Code" label-for="companyCodeInput">
-            <el-input id="companyCodeInput" type="text" v-model="companyCode" required></el-input>
-          </b-form-group>
           <b-form-group id="emailInputGroup" label="Email" label-for="emailInput">
             <el-input id="emailInput" type="email" v-model="email" required></el-input>
           </b-form-group>
@@ -101,8 +93,8 @@
       }
 
       .forgetPassContainer {
-        padding-top: 0px;
-        padding-bottom: 20px;
+        min-width: 100%;
+        padding-top: 90px;
         border-left: 1px dashed #eee;
         .logoContainer {
           text-align: center;

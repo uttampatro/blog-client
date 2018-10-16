@@ -81,7 +81,7 @@ export default {
         message: msg,
       });
     },
-    error(err) {
+    errorToast(err) {
       this.$notify.error({
         title: 'Error',
         message: err,

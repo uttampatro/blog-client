@@ -9,13 +9,13 @@
       <el-menu-item index="Feed">
         Feed
       </el-menu-item>
-        <el-menu-item index="Pofile">
+      <el-menu-item index="Profile">
         Profile
       </el-menu-item>
 
 
       <!-- Rightside profile & logout -->
-          <el-button  index="" style="margin: 10px 20px 2px 0px; float: right;" @click="onLogout">Logout</el-button>
+      <el-button  index="" style="margin: 10px 20px 2px 0px; float: right;" @click="onLogout">Logout</el-button>
 
     </el-menu>
 
