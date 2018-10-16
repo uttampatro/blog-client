@@ -1,6 +1,7 @@
 <template>
 	<div id="profilePage" class="container">
-		<!-- <div class="card" v-loading="fetchingData">
+		<!-- Header -->
+		<div class="card" v-loading="fetchingData">
 			<div class="card-header" style="border-bottom: 2px solid #03A9F4;">
 				<el-breadcrumb separator-class="el-icon-arrow-right">
 					<el-breadcrumb-item :to="{ path: '/user/detail' }">User</el-breadcrumb-item>
@@ -9,8 +10,10 @@
 			</div>
 	
 	
+			<!-- Header Body -->
 			<div class="card-body userDetailsHeader" v-if="userDetails">
 				<el-tabs :tab-position="tabPosition" style="height: 400px; margin: 16px">
+				    <!-- prfile details -->
 					<el-tab-pane label="Account Details" style="padding: 30px 150px 0 60px;">
 	
 						<el-form :label-position="labelPosition" label-width="160px" :model="ruleForm1">
@@ -26,43 +29,23 @@
 							<el-form-item label="Email">
 								<el-input v-model="ruleForm1.email"></el-input>
 							</el-form-item>
-							<el-form-item label="Company">
-								<el-input v-model="ruleForm1.company"></el-input>
-							</el-form-item>
-							<el-form-item label="Role">
-								<el-input v-model="ruleForm1.role"></el-input>
-							</el-form-item>
 							<el-form-item>
 								<el-button type="primary" @click="submitForm('ruleForm1')">Save</el-button>
-								<el-button @click="resetForm('ruleForm1')">Reset</el-button>
 							</el-form-item>
 						</el-form>
 	
 	
 					</el-tab-pane>
 	
-					<el-tab-pane label="Security" style="padding: 30px 150px 0 60px;">
+					<el-tab-pane label="My Articles" style="padding: 30px 150px 0 60px;">
 						<el-form :label-position="labelPosition" :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="160px" class="demo-ruleForm">
-							<el-form-item label="Current Password" :prop="currentPass">
-								<el-input type="password" v-model="ruleForm2.currentPass" auto-complete="off"></el-input>
-							</el-form-item>
-							<el-form-item label="New Password" :prop="pass">
-								<el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
-							</el-form-item>
-							<el-form-item label="Verify New Password" :prop="checkPass">
-								<el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
-							</el-form-item>
-							<el-form-item>
-								<el-button type="primary" @click="submitForm('ruleForm2')">Change password</el-button>
-								<el-button @click="resetForm('ruleForm2')">Reset</el-button>
-							</el-form-item>
+						
 						</el-form>
 					</el-tab-pane>
-				
 				</el-tabs>
 	
 			</div>
-		</div> -->
+		</div>
 	
 	</div>
 </template>

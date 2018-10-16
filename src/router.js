@@ -36,12 +36,18 @@ const FeedPage = resolve => {
     });
 };
 
+// User Profile 
+const CreateArticlePage = resolve => {
+    require.ensure(['./components/createArticle/createArticle'], () => {
+        resolve(require('./components/createArticle/createArticle'));
+    });
+};
+
 
 /*********************  End: Auth *********************/
 
 
 Vue.use(Router);
-
 
 export default new Router({
     mode: 'history',
@@ -58,6 +64,10 @@ export default new Router({
 
         // feed page
         { path: '/feed', name: 'Feed', component: FeedPage },
+
+        // article page
+        { path: '/article/create', name: 'CreateArticle', component: CreateArticlePage },
+
 
     ]
 });

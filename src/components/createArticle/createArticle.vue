@@ -1,30 +1,31 @@
 <template>
-	<div id="feedPage" class="container" >
+	<div id="createArticlePage" class="container">
 	
-		<!-- Header -->
-        <el-button  @click="$router.push({ name: 'CreateArticle' });">Create Article</el-button>
-
-		<div v-loading="fetchingData" >
-			<div class="card" v-for="(feed, index) in feedList" :feed="feed" :key="index">
-				<span>{{feed.publishedBy}}</span>
-				<span>{{feed.title}}</span>
-				<span>{{feed.content}}</span>
-			</div>
-		</div>
-
-
+		<el-form ref="form" v-model="form" label-width="220px" style="width:1000px">
+			<el-form-item label="Title">
+				<el-input v-model="form.title"></el-input>
+			</el-form-item>
+			<el-form-item label="Content">
+				<el-input type="textarea" v-model="form.content"></el-input>
+			</el-form-item>
+			<el-form-item>
+				<el-button type="primary" @click="onSubmit">Create</el-button>
+				<el-button>Cancel</el-button>
+			</el-form-item>
+		</el-form>
+	
 	</div>
 </template>
 
 <style lang="scss">
-	#feedPage {
+	#createArticlePage {
 		padding-top: 30px;
 		min-height: 400px;
 		padding-bottom: 30px;
 		margin: auto;
 		.loadingDiv {
-				min-height: 100px;
-				/* background: white; */
+			min-height: 100px;
+			/* background: white; */
 		}
 		.fontIconContainer {
 			width: 15px;
@@ -32,7 +33,7 @@
 			text-align: center;
 			padding-right: 18px;
 		}
-		.feedHeader {
+		.createArticleHeader {
 			font-size: 18px;
 			color: #607d8b;
 			line-height: 25px;
@@ -44,7 +45,7 @@
 				}
 			}
 		}
-		.feed {
+		.createArticle {
 			margin-top: 20px;
 			.customerPropertiesPanel {
 				.customerProperties {
@@ -102,6 +103,6 @@
 </style>
 
 <script>
-	import FeedComponent from "./feedComponent";
-	export default FeedComponent;
+	import CreateArticleComponent from "./createArticleComponent";
+	export default CreateArticleComponent;
 </script>

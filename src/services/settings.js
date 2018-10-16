@@ -3,7 +3,7 @@
 ////////////////////////////////////////
 
 // api end point
-var baseUrl = 'http://localhost:4000/';
+var baseUrl = 'http://localhost:4000';
 
 module.exports = {
     baseUrl
